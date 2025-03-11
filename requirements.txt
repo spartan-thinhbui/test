@@ -1,0 +1,15 @@
+rasterio 
+shapely 
+scikit-learn 
+scikit-image 
+einops 
+timm 
+geopandas 
+segment-anything 
+matplotlib 
+opencv-python-headless 
+albumentations 
+scipy==1.13.1
+pydantic
+litserve
+boto3
