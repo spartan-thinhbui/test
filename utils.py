@@ -38,13 +38,12 @@ def get_np_image_from_s3(s3_bucket_name: str, file_path: str) -> np.ndarray:
 
 
 def parse_uri(file_uri):
-    split = file_uri.split('//')
+    split = file_uri.split('://')
     names = split[1].split('/')
     bucket_name = names[0]
     file_path = '/'.join(names[1:])
     return bucket_name, file_path
-
-
+    
 if __name__ == '__main__':
     bucket_name = 'sagemaker-us-west-2-resiquant-ai-cv-dev' # Replace with your bucket name
     object_name = 'resiquant_200_addresses/1_front_st_san_francisco_ca_94111.jpg' # Replace with your object key
@@ -53,4 +52,3 @@ if __name__ == '__main__':
     image_np = convert_bytes_to_np_image(data_bytes)
 
     print(image_np)
-
